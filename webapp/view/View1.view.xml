@@ -8,7 +8,7 @@
 	<Shell id="shell">
 		<App id="app">
 			<pages>
-				<Page id="page" title="{i18n>title}">
+				<Page id="page" title="{i18n>title}"> <!--//Data Binding -->
 					<content>
 						<!--<Label text="Sistema" />
 						<Text text="{device>/os/name}" />
@@ -43,10 +43,15 @@
 								<Slider min="0" max="100" value="{/quiz_1}" enabled="false" />
 							    <RatingIndicator maxValue="5" value="{/quiz_1_media}" enabled="false" />
 								
-								<!--//Competences-->
-								<core:Title text="{i18n>competences}" /> 
-								
 							</form:content>
+							
+							<!--//Competences-->
+							<List items="{/competencias}"> <!--//Agregation Bind-->
+							    <items>
+							    	<StandardListItem title="{}" />
+							    </items>
+							</List>
+								
 						</form:SimpleForm>
 					</content>
 				</Page>
