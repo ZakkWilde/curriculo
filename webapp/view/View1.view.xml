@@ -21,31 +21,30 @@
 						<form:SimpleForm title="Informações Basicas">
 							<form:content>
 								
-								<core:Title text="Dados Pessoais" /> 
-								
+								<!--//Name Last Name-->
+								<core:Title text="{i18n>personal}" /> 
 								<Label text="Nome" />
 								<Text text="{/nome}" />
-									
 								<Label text="Sobrenome" />
 								<Text text="{/sobrenome}" />
 								
-								<core:Title text="Endereço" /> 
-								
+								<!--//Address-->
+								<core:Title text="{i18n>address}" /> 
 								<Label text="Rua" />
 								<Text text="{/endereco/rua/nome}, {/endereco/rua/numero}" />
-								
 								<Label text="Cidade" />
 								<Text text="{/endereco/cidade}" />
-								
 								<Label text="Estado" />
 								<Text text="{/endereco/estado/nome} - {/endereco/estado/sigla}" />
 								
-								<core:Title text="Quiz" />
+								<!--//Quiz-->
+								<core:Title text="{i18n>quiz}" />
 								<Label text="Primeiro" />
 								<Slider min="0" max="100" value="{/quiz_1}" enabled="false" />
 							    <RatingIndicator maxValue="5" value="{/quiz_1_media}" enabled="false" />
 								
-								<core:Title text="Competencias" /> 
+								<!--//Competences-->
+								<core:Title text="{i18n>competences}" /> 
 								
 							</form:content>
 						</form:SimpleForm>
