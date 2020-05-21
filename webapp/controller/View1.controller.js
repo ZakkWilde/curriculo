@@ -26,8 +26,9 @@ sap.ui.define([
 				competencias: ["ABAP", "UI5", "JavaScript"]
 			};
 			
-			var oModeloPessoal = new JSONModel(oFonteDeDados);
+			// var oModeloPessoal = new JSONModel(oFonteDeDados);
 			// console.log(oModeloPessoal);
+			var oModeloPessoal = new JSONModel("https://www.mocky.io/v2/5ec5da323200006400d748f2");
 			this.getView().setModel(oModeloPessoal);
 
 		}
