@@ -1,0 +1,57 @@
+<mvc:View 
+    controllerName="ovly.data.binding.curriculo.controller.View1" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    displayBlock="true" 
+    xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<!--<Label text="Sistema" />
+						<Text text="{device>/os/name}" />
+						
+						<Label text="Navegador" />
+						<Text text="{device>/browser/name}" />-->
+						
+						<Text text="Você esta usando o sistema: {device>/os/name} e o Navegador: {device>/browser/name} " />
+						
+						<form:SimpleForm title="Informações Basicas">
+							<form:content>
+								
+								<core:Title text="Dados Pessoais" /> 
+								
+								<Label text="Nome" />
+								<Text text="{/nome}" />
+									
+								<Label text="Sobrenome" />
+								<Text text="{/sobrenome}" />
+								
+								<core:Title text="Endereço" /> 
+								
+								<Label text="Rua" />
+								<Text text="{/endereco/rua/nome}, {/endereco/rua/numero}" />
+								
+								<Label text="Cidade" />
+								<Text text="{/endereco/cidade}" />
+								
+								<Label text="Estado" />
+								<Text text="{/endereco/estado/nome} - {/endereco/estado/sigla}" />
+								
+								<core:Title text="Quiz" />
+								<Label text="Primeiro" />
+								<Slider min="0" max="100" value="{/quiz_1}" enabled="false" />
+							    <RatingIndicator maxValue="5" value="{/quiz_1_media}" enabled="false" />
+								
+								<core:Title text="Competencias" /> 
+								
+							</form:content>
+						</form:SimpleForm>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
