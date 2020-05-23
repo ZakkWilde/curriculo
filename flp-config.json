@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "ovly.data.binding.curriculo.curriculo",
+        "description": "Aula 8 - Personal CV ",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#curriculo-Display",
+        "navigationComponentName": "ovly.data.binding.curriculo",
+        "intentSemanticObject": "curriculo",
+        "intentAction": "Display",
+        "html5ApplicationName": "curriculo",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "5e61efe7-5af5-4518-9655-b1776aa65785"
+        ],
+        "contentPackages": [
+            "165dc72d-9d27-40de-bd1d-3288f9c2106f"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Curriculo",
+        "subtitle": "Personal Curriculo",
+        "searchKeywords": "Curriculo,Personal Curriculo",
+        "displayIconUrl": "sap-icon://activities",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

@@ -26,7 +26,11 @@
 								<Label text="Nome" />
 								<Text text="{/nome}" />
 								<Label text="Sobrenome" />
-								<Text text="{/sobrenome}" />
+								<!--<Text text="{/sobrenome}" />-->
+								<Text text="{
+								    path: '/sobrenome',
+								    formatter: '.toUpper'
+								    }" />
 								
 								<!--//Address-->
 								<core:Title text="{i18n>address}" /> 
@@ -44,15 +48,81 @@
 							    <RatingIndicator maxValue="5" value="{/quiz_1_media}" enabled="false" />
 								
 							</form:content>
+							</form:SimpleForm>
 							
 							<!--//Competences-->
-							<List items="{/competencias}"> <!--//Agregation Bind-->
-							    <items>
-							    	<StandardListItem title="{}" />
-							    </items>
-							</List>
+							<Panel 
+							    id="panel_competencias" 
+							    expandable="true" 
+							    headerText="{ 
+							        path: 'skills',
+							        model: 'i18n'
+							      }" > <!--"Agregattion Bind -->
+								<content>
+									<List items="{ path: '/competencias'}"> <!--//Agregation Bind-->
+									    <items>
+									    	<StandardListItem title="{ path: '' }" />
+									    </items>
+									</List>
+								</content>
+							</Panel>
+							
+							<!--//Empresas-->
+							<Panel 
+							    id="panel_companies" 
+							    expandable="true" 
+							    headerText="{ 
+							        path: 'company',
+							        model: 'i18n'
+							      }" > <!--//Agregattion Bind -->
+								<content>
+									<List items="{ path: '/empresas' }"> <!--//Agregation Bind-->
+									    <items>
+									    	<!--<StandardListItem title="{name}" description="{cargo}" />-->
+									    	<!--<StandardListItem title="{path: 'name'} - {path: 'cargo'}" />-->
+									    	<StandardListItem title="{path: 'name'}" description="{path: 'cargo'}" />
+									    </items>
+									</List>
+								</content>
+							</Panel>
+							
+							<!--//Repositorios-->
+							<Panel 
+							    id="panel_repository" 
+							    expandable="true" 
+							    headerText="{ 
+							        path: 'repository',
+							        model: 'i18n'
+							      }" > <!--//Agregattion Bind -->
+								<content>
+									<!--<Table id="table_github" items="github>/" >-->
+									<Table id="table_github" items="{path: '/', model: 'github'}" >
+										<columns>
+											<Column>
+											    <Text text="{i18n>github_repo_name}" />	
+											</Column>
+											<Column>
+												<Text text="{i18n>github_repo_description}" />
+											</Column>
+											<Column visible="{device/system/desktop}">
+												<Text text="{i18n>github_repo_url}" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem>
+												<cells>
+													<Title text="{github>name}" />
+													<Text  text="{model:'github', path: 'description'}" />
+					                                <Link  href="{model:'github', path: 'html_url'}" 
+					                                       text="Abrir Repositório" 
+					                                       target="_blank" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</content>
+							</Panel>
 								
-						</form:SimpleForm>
 					</content>
 				</Page>
 			</pages>

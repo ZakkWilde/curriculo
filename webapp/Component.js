@@ -25,6 +25,10 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+			
+			
+			//var oGitHubModel = this.getModel("github");
+			//oGitHubModel.loadData();                         
 		}
 	});
 });
